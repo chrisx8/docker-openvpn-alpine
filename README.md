@@ -1,5 +1,7 @@
 # docker-openvpn-alpine
 
+[![Build Status](https://travis-ci.com/chrisx8/docker-openvpn-alpine.svg?branch=master)](https://travis-ci.com/chrisx8/docker-openvpn-alpine)
+
 Run OpenVPN in a Docker container.
 
 [chrisx8/openvpn-alpine on Docker Hub](https://hub.docker.com/r/chrisx8/openvpn-alpine)
