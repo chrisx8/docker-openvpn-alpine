@@ -1,0 +1,11 @@
+dist: bionic
+env: DOCKER_REPO=chrisx8/openvpn-alpine:latest
+language: minimal
+sudo: required
+services:
+  - docker
+script:
+  - docker build -t $DOCKER_REPO .
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push $DOCKER_REPO
