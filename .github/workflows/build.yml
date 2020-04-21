@@ -1,0 +1,23 @@
+name: build
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+  schedule:
+    - cron: '0 2 * * 0'
+jobs:
+  build:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build and push
+      env:
+        DOCKER_REPO: chrisx8/openvpn-alpine:latest
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        docker build --build-arg VCS_REF=`git rev-parse --short HEAD` -t $DOCKER_REPO .
+        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        docker push $DOCKER_REPO
