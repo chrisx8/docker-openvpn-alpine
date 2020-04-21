@@ -12,7 +12,7 @@ Run OpenVPN in a Docker container.
 ### Use default parameters
 
 - This will start OpenVPN with `--config server.conf`. If you want to use custom parameters, see [Use custom parameters](#use-custom-parameters).
-- Replace `<OPENVPN_DATA>` with absolute path to OpenVPN config directory
+- Replace `<OPENVPN_DATA>` with name of Docker volume or absolute path to OpenVPN config directory
 
 ```bash
 docker run -v <OPENVPN_DATA>:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMIN chrisx8/openvpn-alpine
@@ -20,7 +20,7 @@ docker run -v <OPENVPN_DATA>:/etc/openvpn -d -p 1194:1194/udp --cap-add=NET_ADMI
 
 ### Use custom parameters
 
-- Replace `<OPENVPN_DATA>` with absolute path to OpenVPN config directory
+- Replace `<OPENVPN_DATA>` with name of Docker volume or absolute path to OpenVPN config directory
 - Replace `<PARAM>` with OpenVPN parameters
 
 ```bash
