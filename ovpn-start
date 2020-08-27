@@ -1,10 +1,10 @@
 #!/bin/sh
 set -e
 
-if [[ "$@" == "" ]]; then
-	param="--config server.conf"
+if [[ -z $@ ]]; then
+	param=--config server.conf
 else
-	param="$@"
+	param=$@
 fi
 echo "OpenVPN parameters: $param"
 
