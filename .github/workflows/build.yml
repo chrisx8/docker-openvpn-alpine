@@ -16,6 +16,6 @@ jobs:
         DOCKER_USERNAME: chrisx8
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
-        docker build --build-arg VCS_REF=`git rev-parse --short HEAD` -t $DOCKER_REPO .
+        docker build -t $DOCKER_REPO .
         echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         docker push $DOCKER_REPO
