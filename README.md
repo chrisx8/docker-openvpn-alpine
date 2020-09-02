@@ -1,7 +1,6 @@
 # docker-openvpn-alpine
 
 [![Buld status](https://github.com/chrisx8/docker-openvpn-alpine/workflows/build/badge.svg?branch=master)](https://github.com/chrisx8/docker-openvpn-alpine/actions?query=workflow%3Abuild)
-[![Docker image commit](https://images.microbadger.com/badges/commit/chrisx8/openvpn-alpine.svg)](https://microbadger.com/images/chrisx8/openvpn-alpine)
 
 Run OpenVPN in a Docker container.
 
