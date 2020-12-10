@@ -1,7 +1,7 @@
 name: build
 on:
   push:
-    branches: devel
+    branches: main
   schedule:
     - cron: '0 2 * * 0'
 jobs:
@@ -27,6 +27,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+          platforms: linux/amd64,linux/arm/v7,linux/arm64
           tags: |
-            chrisx8/openvpn-alpine:devel
-            ghcr.io/chrisx8/openvpn-alpine:devel
+            chrisx8/openvpn-alpine:latest
+            ghcr.io/chrisx8/openvpn-alpine:latest
