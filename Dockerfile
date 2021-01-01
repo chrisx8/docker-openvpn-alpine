@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:edge
 
 RUN apk add --no-cache openvpn
 COPY ovpn-start /bin/ovpn-start
