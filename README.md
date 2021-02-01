@@ -3,7 +3,7 @@
 [![Build status](https://github.com/chrisx8/docker-openvpn-alpine/workflows/build/badge.svg)](https://github.com/chrisx8/docker-openvpn-alpine/actions?query=workflow%3Abuild)
 [![CodeFactor](https://www.codefactor.io/repository/github/chrisx8/docker-openvpn-alpine/badge)](https://www.codefactor.io/repository/github/chrisx8/docker-openvpn-alpine)
 
-Run OpenVPN in a Docker container.
+Run OpenVPN in a Docker container. The Docker image is updated weekly.
 
 Docker image: [chrisx8/openvpn-alpine on Docker Hub](https://hub.docker.com/r/chrisx8/openvpn-alpine)
 
