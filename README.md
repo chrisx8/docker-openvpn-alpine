@@ -1,6 +1,6 @@
 # docker-openvpn-alpine
 
-[![Build status](https://github.com/chrisx8/docker-openvpn-alpine/workflows/build/badge.svg)](https://github.com/chrisx8/docker-openvpn-alpine/actions?query=workflow%3Abuild)
+[![build](https://github.com/chrisx8/docker-openvpn-alpine/actions/workflows/build.yml/badge.svg)](https://github.com/chrisx8/docker-openvpn-alpine/actions/workflows/build.yml)
 
 Run OpenVPN in a Docker container. The Docker image is updated weekly.
 
