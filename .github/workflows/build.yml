@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PACKAGE_NAME: openvpn-alpine
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -17,10 +19,30 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Login to GHCR
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           push: true
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           tags: |
-            chrisx8/openvpn-alpine:latest
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.PACKAGE_NAME }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ env.PACKAGE_NAME }}:latest
+      - name: Remove untagged images
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GHCR_DELETE_TOKEN }}
+          script: |
+            const response = await github.request("GET /user/packages/container/${{ env.PACKAGE_NAME }}/versions");
+            for(version of response.data) {
+                if (version.metadata.container.tags.length == 0) {
+                    const deleteResponse = await github.request("DELETE /user/packages/container/${{ env.PACKAGE_NAME }}/versions/" + version.id, { });
+                    console.log("[status] " + deleteResponse.status);
+                    console.log("Deleted version " + version.id);
+                }
+            }
