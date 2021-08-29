@@ -4,8 +4,12 @@
 
 Run OpenVPN in a Docker container. The Docker image is updated weekly.
 
-> **Note: `chrisx8/openvpn-alpine` on Docker Hub is DEPRECATED. While it is still updated regularly, it will be removed in the near future.**  
-> **Please switch to `ghcr.io/chrisx8/openvpn-alpine` as soon as possible.**
+## ⚠ IMPORTANT NOTICE
+
+**If you're using `chrisx8/openvpn-alpine` or `docker.io/chrisx8/openvpn-alpine` now, please switch to `ghcr.io/chrisx8/openvpn-alpine`!**
+
+- GitHub Container Registry is now generally available. Going forward, new container images will be available there EXCLUSIVELY.
+- `chrisx8/openvpn-alpine` on Docker Hub is DEPRECATED. It is NO LONGER UPDATED, and will be REMOVED by Friday October 1, 2021.
 
 ## Set up
 
