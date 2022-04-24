@@ -4,7 +4,7 @@
 
 Run OpenVPN in a Docker container. The Docker image is updated weekly.
 
-## ⚠ IMPORTANT NOTICE
+## ⚠ IMPORTANT
 
 **If you're using `chrisx8/openvpn-alpine` or `docker.io/chrisx8/openvpn-alpine` now, please switch to `ghcr.io/chrisx8/openvpn-alpine`!**
 
