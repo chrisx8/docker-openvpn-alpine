@@ -1,15 +1,8 @@
 # docker-openvpn-alpine
 
-[![build](https://github.com/chrisx8/docker-openvpn-alpine/actions/workflows/build.yml/badge.svg)](https://github.com/chrisx8/docker-openvpn-alpine/actions/workflows/build.yml)
+## ⚠ Important
 
-Run OpenVPN in a Docker container. The Docker image is updated weekly.
-
-## ⚠ IMPORTANT
-
-**If you're using `chrisx8/openvpn-alpine` or `docker.io/chrisx8/openvpn-alpine` now, please switch to `ghcr.io/chrisx8/openvpn-alpine`!**
-
-- `chrisx8/openvpn-alpine` on Docker Hub HAS BEEN REMOVED.
-- GitHub Container Registry is now generally available. Going forward, new container images will be available there EXCLUSIVELY.
+This repository is NO LONGER MAINTAINED and the Docker image is no longer built. The image, `ghcr.io/chrisx8/openvpn-alpine`, will be removed. **You should switch to a supported alternative.**
 
 ## Set up
 
